@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Do" representedClassName="Do" syncable="YES">
+        <attribute name="bio" optional="YES" attributeType="String"/>
+        <attribute name="completionStatus" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="home" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="dos" inverseEntity="Project"/>
+    </entity>
+    <entity name="Project" representedClassName="Project" syncable="YES">
+        <attribute name="bio" optional="YES" attributeType="String"/>
+        <attribute name="completionStatus" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="dos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Do" inverseName="home" inverseEntity="Do">
+            <userInfo>
+                <entry key="Transformer" value="NSSecureUnarchiveFromDataTransformer"/>
+            </userInfo>
+        </relationship>
+    </entity>
+    <elements>
+        <element name="Do" positionX="306.1328125" positionY="24.171875" width="128" height="103"/>
+        <element name="Project" positionX="-63" positionY="-18" width="128" height="103"/>
+    </elements>
+</model>
